@@ -60,10 +60,10 @@ The comparision in parameters is given below:
     </tr>
     <tr>
     	<td>
-    		<center><img src="./test/Inputs/butterfly20.jpg" height="150"></center>
+    		<center><img src="./test/Inputs/butterfly20.jpg" height="200"></center>
     	</td>
     	<td>
-    		<center><img src="./test/outputs/outbutterfly20.jpg" height="150"></center>
+    		<center><img src="./test/outputs/outbutterfly20.jpg" height="200"></center>
     	</td>
     </tr>
     <tr>
@@ -72,10 +72,10 @@ The comparision in parameters is given below:
     </tr>
     <tr>
     	<td>
-    		<center><img src="./test/Inputs/butterfly15.jpg" height="150"></center>
+    		<center><img src="./test/Inputs/butterfly15.jpg" height="200"></center>
     	</td>
     	<td>
-    		<center><img src="./test/outputs/outbutterfly15.jpg" height="150"></center>
+    		<center><img src="./test/outputs/outbutterfly15.jpg" height="200"></center>
     	</td>
     </tr>
     <tr>
@@ -84,10 +84,10 @@ The comparision in parameters is given below:
     </tr>
     <tr>
     	<td>
-    		<center><img src="./test/Inputs/butterfly10.jpg" height="150"></center>
+    		<center><img src="./test/Inputs/butterfly10.jpg" height="200"></center>
     	</td>
     	<td>
-    		<center><img src="./test/outputs/outbutterfly10.jpg" height="150"></center>
+    		<center><img src="./test/outputs/outbutterfly10.jpg" height="200"></center>
     	</td>
     </tr>
 </table>
