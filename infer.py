@@ -19,14 +19,12 @@ def ssim(y_true,y_pred):
 def psnr(y_true,y_pred):
     return tf.image.psnr(y_true,y_pred,max_val=1.0)
 
-def process_image_SR(impath,pre_shape=False):
+def process_image_SR(impath):
     im = PIL.Image.open(impath)
-    if(pre_shape):
-        im = im.filter(PIL.ImageFilter.DETAIL)
-    im = im.convert('YCbCr')
+    im = im.convert('YCbCr') # For single channel inference
     im = np.asanyarray(im)
-    y = np.expand_dims(im[:,:,0],-1)/255
-    uv = np.asanyarray(uv)[:,:,1:]
+    y = np.expand_dims(im[:,:,0],-1)/255 # Normalizing input
+    uv = np.asanyarray(im)[:,:,1:]
     #print("uv:",uv.shape,"| y:",y.shape)
     return (y,uv)
 
@@ -60,7 +58,7 @@ if __name__ == "__main__":
         im_y = []
         im_uv = []
         for j in range(8):
-            y,uv = process_image_SR(i[j],opt.pre_sharp)
+            y,uv = process_image_SR(i[j])
             im_y.append(y)
             im_uv.append(uv)
         im_y = np.stack(im_y,axis=0)
@@ -73,21 +71,25 @@ if __name__ == "__main__":
             y_pred= np.clip(y_pred,0,255).astype('uint8')
             y_pred = PIL.Image.fromarray(y_pred,mode='YCbCr').convert('RGB')
             fname = "out"+ i[j].split("/")[-1]
+            converter = PIL.ImageEnhance.Color(y_pred)
+            y_pred = converter.enhance(1.4)
             y_pred.save(opt.output_path+fname)
             prog.update(count)
         #print("=",end="")     
     print(count,"Files done")
     for i in rem_files:
-        im_y,im_uv = process_image_SR(i,opt.pre_sharp)
+        im_y,im_uv = process_image_SR(i)
         #print(im_y.shape)
         im_y = np.expand_dims(im_y,0)
         outs = ARCNN.predict(im_y)
         count += 1
-        out = outs.reshape(im_y.shape[1]*2, im_y.shape[2]*2)
+        out = outs.reshape(im_y.shape[1], im_y.shape[2]) #Removing batch dimensions
         y_pred = np.stack([out*255,im_uv[:,:,0],im_uv[:,:,1]],axis=-1)
         y_pred= np.clip(y_pred,0,255).astype('uint8')
         y_pred = PIL.Image.fromarray(y_pred,mode='YCbCr').convert('RGB')
         fname = "out"+ i.split("/")[-1]
+        converter = PIL.ImageEnhance.Color(y_pred)
+        y_pred = converter.enhance(1.4)
         y_pred.save(opt.output_path+fname)
         prog.update(count)
     print("\nDone")
