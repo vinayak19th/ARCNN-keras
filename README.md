@@ -106,11 +106,11 @@ The usage of docker would be the following:
 ```bash
 > cd /location/of/repository
 ```
-### _Step 2: Build image from Dockerfile
+### _Step 2: Build image from Dockerfile_
 ```bash
 docker build ./ -t arcnnkeras  
 ```
-### _Step 3: Start and enter container
+### _Step 3: Start and enter container_
 ```bash
 docker run -it --gpus all -v $PWD:/app -p 8888:8888 arcnnkeras bash
 ```
