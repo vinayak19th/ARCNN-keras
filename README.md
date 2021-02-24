@@ -1,8 +1,18 @@
 # ARCNN-keras 
+
+[![GitHub issues](https://img.shields.io/github/issues/vinayak19th/ARCNN-keras?color=339933&logo=Github&style=for-the-badge)](https://github.com/vinayak19th/ARCNN-keras/issues)
+[![GitHub forks](https://img.shields.io/github/forks/vinayak19th/ARCNN-keras?color=339933&logo=Github&style=for-the-badge)](https://github.com/vinayak19th/ARCNN-keras/network)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Tensorflow?&logo=Python&style=for-the-badge)
+![Tensorflow Version](https://img.shields.io/static/v1?label=Tensorflow&message=2.1%2B&color=ffcc00&logo=Tensorflow&logoColor=ffcc00&style=for-the-badge)
+![Docker Image Size](https://img.shields.io/static/v1?label=DockerImage&message=3.35GB&color=0066ff&logo=Docker&style=for-the-badge)
+
+
 A tf-keras implementation of ARCNN mentioned in :
 * [Deep Convolution Networks for Compression Artifacts Reduction](https://arxiv.org/abs/1608.02778), Ke Yu, Chao Dong, Chen Change Loy, Xiaoou Tang
 
 ARCNN-keras network notebook [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vinayak19th/ARCNN-keras/blob/main/model_ARCNN.ipynb#scrollTo=2G-oElXzJbcp)
+
+
 
 ## Requirnments:
 * Tensorflow
