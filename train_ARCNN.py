@@ -88,7 +88,7 @@ if __name__ == "__main__":
     #Train Model
     optim = tf.keras.optimizers.Adam(learning_rate=1e-3)
     model.compile(optimizer=optim,loss=custom_loss,metrics=[ssim,psnr])
-    model.fit(data,epochs=40,callbacks=[tboard,cp,lr_reduce])
+    model.fit(data,epochs=opt.epochs,callbacks=[tboard,cp,lr_reduce])
 
     #SaveModel
     model.save(opt.model_save_path,save_format="tf")
