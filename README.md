@@ -50,7 +50,11 @@ The comparision in parameters is given below:
     </tr>
     <tr>
         <td>ARCNN Lite</td>
-        <td>32k</td>
+        <td>27k</td>
+    </tr>
+    <tr>
+        <td>ARCNN Attention</td>
+        <td>30k</td>
     </tr>
 </table>
 <br>
